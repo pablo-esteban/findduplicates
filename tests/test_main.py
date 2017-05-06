@@ -30,12 +30,11 @@ class DuplicateFinder(object):
 #         expected = ['path/asdf', 'asdfsda']
 
 
-
 class TestMain(unittest.TestCase):
 
     def setUp(self):
-        iterator = mock.Mock()
-        self.duplicate_finder = DuplicateFinder(iterator)
+        iterator_factory = mock.Mock(return_value=[])
+        self.duplicate_finder = DuplicateFinder(iterator_factory)
 
     def test_should_find_two_duplicates(self):
         some_path = '/home/pablo/Code/untitled/data'
@@ -57,8 +56,8 @@ class TestMain(unittest.TestCase):
 class FolderWithOneFileTests(unittest.TestCase):
 
     def setUp(self):
-        iterator = mock.Mock()
-        self.duplicate_finder = DuplicateFinder(iterator)
+        iterator_factory = mock.Mock(return_value=[])
+        self.duplicate_finder = DuplicateFinder(iterator_factory)
 
     def test_should_not_find_duplicates(self):
         some_path = '/home/pablo/Code/untitled/data/a'
@@ -72,8 +71,8 @@ class FolderWithOneFileTests(unittest.TestCase):
 class FolderWithUniqueFilesTests(unittest.TestCase):
 
     def setUp(self):
-        iterator = mock.Mock()
-        self.duplicate_finder = DuplicateFinder(iterator)
+        iterator_factory = mock.Mock(return_value=[])
+        self.duplicate_finder = DuplicateFinder(iterator_factory)
 
     def test_should_not_find_duplicates(self):
         some_path = '/home/pablo/Code/untitled/data/c'
