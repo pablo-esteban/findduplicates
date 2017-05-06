@@ -44,14 +44,6 @@ class TestMain(unittest.TestCase):
 
         self.assertDictEqual(actual, expected)
 
-    def test_should_not_find_duplicates(self):
-        some_path = '/home/pablo/Code/untitled/data/c'
-        actual = self.duplicate_finder.find(some_path)
-
-        expected = {}
-
-        self.assertDictEqual(actual, expected)
-
 
 class FolderWithOneFileTests(unittest.TestCase):
 
