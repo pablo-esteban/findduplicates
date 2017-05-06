@@ -19,17 +19,6 @@ class DuplicateFinder(object):
         return {'0f79610bebc81f7bfd6212cd656fb467': 2}
 
 
-# class FileSystemIteratorTests(unittest):
-#
-#     def test_(self):
-#         iterator = FileSystemIterator(path)
-#
-#         for file in iterator:
-#             pass
-#
-#         expected = ['path/asdf', 'asdfsda']
-
-
 class TestMain(unittest.TestCase):
 
     def setUp(self):
